@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #1a6b5a;
+  --color-primary-dark: #134f43;
+  --color-accent: #e8a020;
+  --color-accent-hover: #d18f1a;
+  --color-bg-light: #f5f7fa;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-gray-800 bg-white;
+  }
+}
+
+@layer components {
+  .section-tag {
+    @apply text-accent font-semibold tracking-wider text-sm uppercase mb-2 block;
+  }
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-primary mb-6;
+  }
+  .btn-primary {
+    @apply bg-accent hover:bg-accent-hover text-white px-8 py-3 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg inline-block;
+  }
+  .btn-outline {
+    @apply border-2 border-white text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:bg-white hover:text-primary inline-block;
+  }
+  .card-shadow {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300;
+  }
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(26, 107, 90, 0.95) 0%, rgba(26, 107, 90, 0.7) 100%);
+}
+
+/* Scroll Animation Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
